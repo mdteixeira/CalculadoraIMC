@@ -22,15 +22,15 @@ function calcularIMC() {
 function erro(codigo, campo) {
     let alerta = document.querySelector(`#${codigo}`);
     alerta.style.display = 'block';
-    
+
     let invalido = document.querySelector(`${campo}`);
-    invalido.classList.add('border-danger')
+    invalido.classList.add('border-danger');
 
     const myTimeout = setTimeout(tirarAlerta, 3500);
     myTimeout;
     function tirarAlerta() {
         alerta.style.display = '';
-        invalido.classList.remove('border-danger')
+        invalido.classList.remove('border-danger');
     }
 }
 
@@ -79,7 +79,13 @@ function mostrarResultado(resultado) {
     eyebrow.innerHTML = topText;
 
     let catTab = document.querySelector(`#t${cat}`);
-    catTab.classList = 'table-active';
+    catTab.classList = 'border border-2 border-info bg-info-subtle';
+
+    const myTimeout = setTimeout(tirarCat, 15000);
+    myTimeout;
+    function tirarCat() {
+        catTab.classList = ''
+    }
 
     let blocoRes = document.getElementById('BlocoResultado');
     resElemento.style.color = cor;
