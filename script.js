@@ -9,7 +9,7 @@ function calcularIMC() {
     let resultado = Massa / (Altura * Altura);
 
     if (Altura < 1 && Massa < 1) {
-        erro('inputVazio', 'main');
+        erro('inputVazio', '.row');
     } else if (resultado == Infinity) {
         erro('inf', '#cardAltura');
     } else if (resultado == 0) {
@@ -24,13 +24,13 @@ function erro(codigo, campo) {
     alerta.style.display = 'block';
 
     let invalido = document.querySelector(`${campo}`);
-    invalido.classList.add('border-danger');
+    invalido.classList.add('border', 'border-2', 'border-danger');
 
     const myTimeout = setTimeout(tirarAlerta, 3500);
     myTimeout;
     function tirarAlerta() {
         alerta.style.display = '';
-        invalido.classList.remove('border-danger');
+        invalido.classList.remove('border', 'border-2', 'border-danger');
     }
 }
 

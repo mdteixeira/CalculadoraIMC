@@ -1,12 +1,12 @@
+* {
+    font-family: 'Geologica', sans-serif;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-html {
-    background: #000;
 }
 
 #cardMassa:hover, #cardAltura:hover {
@@ -30,4 +30,8 @@ input:focus{
 #inputVazio, #inf, #zero {
     display: none;
     transition: 0.2s;
+}
+
+span {
+    scale: 0.5;
 }

@@ -16,96 +16,128 @@
         />
 
         <title>Calculadora de IMC</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <style>
+            .material-symbols-outlined {
+              font-variation-settings:
+              'FILL' 0,
+              'wght' 300,
+              'GRAD' 200,
+              'opsz' 20
+            }
+            </style>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
-    <body class="d-grid mx-lg-5 px-lg-5 bg-transparent">
-        <main
-            class="m-lg-5 p-lg-5 p-3 pb-5 d-grid border border-3 rounded-5 mt-2 mx-2 bg-body"
-            id="calcular"
-        >
+    <body class="">
+        <main class="m-lg-5 p-3 pb-5 d-grid mt-2 mx-2" id="calcular">
+            <div
+                class="alert alert-danger rounded-4 text-center w-75 mx-auto"
+                id="inputVazio"
+                role="alert"
+            >
+                Insira algum valor
+            </div>
+            <div
+                class="alert alert-danger rounded-4 text-center w-75 mx-auto"
+                id="inf"
+                role="alert"
+            >
+                Insira a altura
+            </div>
+            <div
+                class="alert alert-danger rounded-4 text-center w-75 mx-auto"
+                id="zero"
+                role="alert"
+            >
+                Insira a massa
+            </div>
 
-        <div class="alert alert-danger rounded-4 text-center w-75 mx-auto" id="inputVazio" role="alert">
-            Insira algum valor
-          </div>
-        <div class="alert alert-danger rounded-4 text-center w-75 mx-auto" id="inf" role="alert">
-            Insira a altura
-          </div>
-        <div class="alert alert-danger rounded-4 text-center w-75 mx-auto" id="zero" role="alert">
-            Insira a massa
-          </div>
-
-            <h1 class="display-4 fw-bold text-center mb-4">
+            <h1 class="display-4 fw-bold text-center text-info">
                 Calculadora de IMC
             </h1>
-                <div class="container text-center">
-                    <div class="row">
-                        <a
-                            href="#massa"
-                            class="inputCard col-lg border border-1 rounded-5 shadow-sm mx-lg-3 p-lg-3 text-black text-decoration-none"
-                            id="cardMassa"
-                            tabindex="-1"
-                        >
-                            <h2 class="mb-2 p-3">Insira sua massa</h2>
-                            <input
-                                type="number"
-                                name="massa"
-                                id="massa"
-                                step="0.01"
-                                min="1"
-                                max="999"
-                                placeholder="00,00"
-                                class="display-3 border-0 text-center w-75 fw-bold mb-2"
-                            />
-                            <p class="text-secondary">Em quilogramas</p>
-                        </a>
-                        <div class="d-lg-none my-3"></div>
-                        <a
-                            href="#altura"
-                            class="inputCard col-lg border border-1 rounded-5 shadow-sm mx-lg-3 p-lg-3 text-black text-decoration-none"
-                            id="cardAltura"
-                            tabindex="-1"
-                        >
-                            <h2 class="mb-2 p-3">Insira sua altura</h2>
-                            <input
-                                type="number"
-                                name="altura"
-                                id="altura"
-                                step="0.01"
-                                min="1"
-                                max="999"
-                                oninput="if (value > 2.9) {
+            <div class="d-flex align-self-center justify-content-center">
+                <h3 class="text-center lead mb-4">
+                    Calcule seu Índice de massa corporal
+                </h3>
+                <a href="https://www.saude.rj.gov.br/obesidade/noticias/2019/03/imc-voce-sabe-o-que-o-indice-de-massa-corporal-diz-sobre-sua-saude" target="_blank" rel="noopener noreferrer" class="mx-2 h-25 material-symbols-outlined text-decoration-none text-info siteIMC">
+                    info</a>
+            </div>
+            <div class="container text-center">
+                <div class="row rounded-5">
+                    <a
+                        href="#massa"
+                        class="inputCard bg-body col-lg rounded-5 shadow-sm mx-lg-3 p-lg-3 text-black text-decoration-none"
+                        id="cardMassa"
+                        tabindex="-1"
+                    >
+                        <h2 class="mb-2 p-3">Insira sua massa</h2>
+                        <input
+                            type="number"
+                            name="massa"
+                            id="massa"
+                            step="0.01"
+                            min="1"
+                            max="999"
+                            placeholder="00,00"
+                            class="display-3 border-0 text-center w-75 fw-bold mb-2 text-info"
+                        />
+                        <p class="text-secondary">Em quilogramas</p>
+                    </a>
+                    <div class="d-lg-none my-3"></div>
+                    <a
+                        href="#altura"
+                        class="inputCard bg-body col-lg rounded-5 shadow-sm mx-lg-3 p-lg-3 text-black text-decoration-none"
+                        id="cardAltura"
+                        tabindex="-1"
+                    >
+                        <h2 class="mb-2 p-3">Insira sua altura</h2>
+                        <input
+                            type="number"
+                            name="altura"
+                            id="altura"
+                            step="0.01"
+                            min="1"
+                            max="999"
+                            oninput="if (value > 2.9) {
                                     let labelAltura = document.querySelector('#labelAltura');
                                     labelAltura.innerHTML = 'Em centímetros'
                                 } else {
                                     labelAltura.innerHTML = 'Em metros'
                                 }"
-                                placeholder="0,00"
-                                class="display-3 border-0 text-center w-75 fw-bold mb-2"
-                            />
-                            <p class="text-secondary" id="labelAltura">Em metros</p>
-                        </a>
-                    </div>
+                            placeholder="0,00"
+                            class="display-3 border-0 text-center w-75 fw-bold mb-2 text-info"
+                        />
+                        <p class="text-secondary" id="labelAltura">Em metros</p>
+                    </a>
                 </div>
-                <div class="d-flex justify-content-center align-content-center">
-                    <button
-                        type=""
-                        class="btn shadow-sm btn-outline-dark mt-5 fs-3 w-75"
-                        id="confirmar"
-                        onclick="calcularIMC()"
-                    >
-                        Calcular
-                    </button>
-                    <span class="mx-3 d-none d-lg-block"></span>
-                    <div
-                        class="badge border border-2 fw-light text-black-50 mt-5 d-grid align-content-center px-4 d-lg-grid d-none"
-                    >
-                        Enter
-                    </div>
+            </div>
+            <div class="d-flex justify-content-center align-content-center">
+                <button
+                    type=""
+                    class="btn shadow-sm btn-outline-dark mt-5 fs-3 w-75"
+                    id="confirmar"
+                    onclick="calcularIMC()"
+                >
+                    Calcular
+                </button>
+                <span class="mx-3 d-none d-lg-block"></span>
+                <div
+                    class="badge border border-2 fw-light text-black-50 mt-5 d-grid align-content-center px-4 d-lg-grid d-none"
+                >
+                    Enter
                 </div>
+            </div>
         </main>
-        <div class="d-lg-none my-3"></div>
         <div
             id="BlocoResultado"
-            class="m-lg-5 p-lg-5 p-3 pb-5 text-center border border-3 rounded-5 mt-2 mx-2 bg-body"
+            class="text-center mt-2 pt-5 px-3 bg-body-tertiary"
         >
             <h2 class="display-3 fw-bold mb-2">Resultado</h2>
             <h2 class="badge border border-1 p-lg-3 fw-bolder" id="resultado">
@@ -114,41 +146,66 @@
             <h3 class="fs-4 mt-3 fw-light" id="topText">--</h3>
             <h3 class="fs-1 fw-bolder" id="categoria">--</h3>
             <h3 class="mt-5">Confira a tabela abaixo para saber mais</h3>
-            <table class="table table-hover">
-                <thead class="">
-                    <tr>
-                        <th>Valores</th>
-                        <th>Categoria</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="t-1">
-                        <td>Abaixo de 18,5</td>
-                        <td>Abaixo do peso saudável</td>
-                    </tr>
-                    <tr id="t0">
-                        <td>Entre 18,5 e 24,9</td>
-                        <td>Peso saudável</td>
-                    </tr>
-                    <tr id="t1">
-                        <td>Entre 25 e 29,9</td>
-                        <td>Sobrepeso</td>
-                    </tr>
-                    <tr id="t2">
-                        <td>Entre 30 e 34,9</td>
-                        <td>Obesidade grau I</td>
-                    </tr>
-                    <tr id="t3">
-                        <td>Entre 35 e 39,9</td>
-                        <td>Obesidade grau II</td>
-                    </tr>
-                    <tr id="t4">
-                        <td>Acima de 40</td>
-                        <td>Obesidade grau III (mórbida)</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabela p-lg-5 p-2">
+                <table class="table table-hover">
+                    <thead class="">
+                        <tr>
+                            <th>Valores</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="t-1">
+                            <td>Abaixo de 18,5</td>
+                            <td>Abaixo do peso saudável</td>
+                        </tr>
+                        <tr id="t0">
+                            <td>Entre 18,5 e 24,9</td>
+                            <td>Peso saudável</td>
+                        </tr>
+                        <tr id="t1">
+                            <td>Entre 25 e 29,9</td>
+                            <td>Sobrepeso</td>
+                        </tr>
+                        <tr id="t2">
+                            <td>Entre 30 e 34,9</td>
+                            <td>Obesidade grau I</td>
+                        </tr>
+                        <tr id="t3">
+                            <td>Entre 35 e 39,9</td>
+                            <td>Obesidade grau II</td>
+                        </tr>
+                        <tr id="t4">
+                            <td>Acima de 40</td>
+                            <td>Obesidade grau III (mórbida)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <footer>
+            <section class="text-center text-muted bg-dark-subtle d-flex justify-content-center align-content-center" id="copy">
+                <h2 class="fs-6">© Feito por
+                <a
+                    href="https://github.com/mdteixeira"
+                    target="_blank"
+                    class="link-body-emphasis"
+                    >Matheus Teixeira<span class="material-symbols-outlined">
+                        open_in_new
+                        </span></a
+                >
+                e
+                <a
+                    href="https://github.com/LiuDayana"
+                    class="link-body-emphasis"
+                    target="_blank"
+                    >Daiana Liu<span class="material-symbols-outlined">
+                        open_in_new
+                        </span></a
+                ></h2>
+            </section>
+        </footer>
 
         <script src="script.js"></script>
         <script
