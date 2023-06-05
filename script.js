@@ -2,7 +2,7 @@ function calcularIMC() {
     let Altura = Number(document.querySelector('#altura').value);
     let Massa = Number(document.querySelector('#massa').value);
 
-    if (Altura > 2) {
+    if (Altura > 3) {
         Altura = Altura / 100;
     }
 
@@ -93,16 +93,11 @@ function mostrarResultado(resultado) {
     blocoRes.scrollIntoView();
 }
 
-// Get the input field
 var input = document.querySelector('html');
 
-// Execute a function when the user presses a key on the keyboard
 input.addEventListener('keypress', function (event) {
-    // If the user presses the "Enter" key on the keyboard
     if (event.key === 'Enter') {
-        // Cancel the default action, if needed
         event.preventDefault();
-        // Trigger the button element with a click
         document.getElementById('confirmar').click();
     }
 });
