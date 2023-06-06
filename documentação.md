@@ -1,6 +1,11 @@
+# Calculadora de IMC
+### Feito por:
+- Dayana Liu
+- Matheus Teixeira
+
 # Como foi feito
 
-## Bootstrap;
+## Bootstrap
  Os componentes/ferramentas do Bootstrap utilizados foram:
 - Cards - mostrar informações/estilizar o input;
 - Grids - organizar os componentes;
