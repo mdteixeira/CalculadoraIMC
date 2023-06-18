@@ -48,3 +48,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#copy {
+    background-color: white;
+}

@@ -44,7 +44,7 @@ function mostrarResultado(resultado) {
         categoria = 'Abaixo do peso saudável';
         cor = '#B19719';
         cat = -1;
-    } else if (resultado > 18.5 && resultado < 24.9) {
+    } else if (resultado > 18.5 && resultado < 25) {
         topText = 'Parabéns, você está com um';
         categoria = 'Peso saudável';
         cor = '#16B13D';
